@@ -1,0 +1,51 @@
+{
+  "mcpServers": {
+    "antonie-van-leeuwenhoek-ai": {
+      "command": "cargo",
+      "args": [
+        "run",
+        "--release",
+        "--quiet"
+      ],
+      "env": {
+        "RUST_LOG": "info",
+        "TITAN_PROTOCOL": "LEEUWENHOEK",
+        "TARGET_CHAIN": "Sui",
+        "FIPS_203_LEVEL": "ML-KEM-768",
+        "FIPS_204_LEVEL": "ML-DSA-65"
+      },
+      "tools": [
+        {
+          "name": "resolve_microscopic_submicron_particles",
+          "description": "Calculates numerical aperture and resolution limit for single spherical bead lenses",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "lens_radius_mm": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "lens_radius_mm"
+            ]
+          }
+        },
+        {
+          "name": "quantify_microbial_motility_velocity",
+          "description": "Tracks flagellar locomotion velocity and density of aquatic infusoria microorganisms",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "cell_count_per_ml": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "cell_count_per_ml"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
